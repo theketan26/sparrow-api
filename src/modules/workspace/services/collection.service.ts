@@ -109,7 +109,9 @@ export class CollectionService {
       return user.id.toString() === userid.toString();
     });
     if (!hasPermission) {
-      throw new UnauthorizedException(ErrorMessages.Unauthorized);
+      throw new UnauthorizedException(
+        "You don't have access to this Collection",
+      );
     }
   }
   async updateCollection(
